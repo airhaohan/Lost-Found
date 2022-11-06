@@ -1,0 +1,45 @@
+request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        try {
+            if (!ServletFileUpload.isMultipartContent(request)) {
+                request.setAttribute("message", "上传失败1！");
+                request.getRequestDispatcher("/between.jsp").forward(request, response);
+                return;
+            }
+            FileItemFactory factory = new DiskFileItemFactory();                //工厂实例
+            ServletFileUpload upload = new ServletFileUpload(factory);          //ServletFileUpload实例依赖于FileItemFactory工厂
+            List<FileItem> itemList = upload.parseRequest(request);             //解析表单字段，封装成一个FileItem实例的集合
+            if (itemList.size() != 1) {
+                request.setAttribute("message", "上传失败" + itemList.size());
+                request.getRequestDispatcher("/between.jsp").forward(request, response);
+                return;
+            }
+            FileItem fileItem = itemList.get(0);  //依次解析每一个FileItem实例，即表单字段
+            if (fileItem.isFormField()) {
+                //普通表单字段
+                request.setAttribute("message", "上传失败3！");
+                request.getRequestDispatcher("/between.jsp").forward(request, response);
+                return;
+            } else {
+                //文件表单字段
+                String curTime = new SimpleDateFormat("yyyyMMddHHmmssSSS") .format(new Date() );
+                String fileUpName = curTime + fileItem.getName();  //用户上传的文件名
+                File file = new File("F:\\LAF\\image" + fileUpName);  //要保存到的文件
+                if (!file.exists())
+                    file.createNewFile();               //一开始肯定是没有的，所以先创建出来
+                fileItem.write(file);                   //写入，保存到目标文件
+                //更新用户信息
+                HttpSession session = request.getSession();
+                User user = (User) session.getAttribute("user");
+                service.personInformation(user.getEmail(),
+                        user.getUsername(),
+                        "/myimage/" + fileUpName,
+                        user.getSelfintro());
+                user = service.login(user.getEmail(), user.getPassword());
+                session.setAttribute("user", user);
+                request.setAttribute("message", "修改头像成功！");
+                request.getRequestDispatcher("/between.jsp").forward(request, response);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }

@@ -1,0 +1,60 @@
+.left {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 30px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    overflow-y: scroll;
+}
+.left::-webkit-scrollbar{
+    width: 3px;
+    background-color: #f5f5f5;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.my-5 {
+    margin: 25px 0;
+}
+.lbackpage {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.lbackpage:hover {
+    transform: translateX(-10px);
+}
+.lbackpage i {
+    font-size: 3.5rem !important;
+}
+.selfprofile {
+    margin-top: 30px;
+    width: 45%;
+}
+.useremail {
+    align-self: baseline;
+    justify-self: baseline;
+    padding: 0px 10px;
+}
+.divider {
+    background-color: #000 !important;
+}
+.editmodal {
+    min-height: 40vh;
+    padding: 30px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fixed-action-btn {
+    position: absolute;
+}

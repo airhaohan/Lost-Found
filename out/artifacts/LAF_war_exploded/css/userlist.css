@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.my-5 {
+    margin: 20px 0;
+}
+.d-none {
+    display: none !important;
+}
+.backpage {
+    position: absolute;
+    top: 40px;
+    transition: all 0.3s ease-in-out;
+}
+.backpage:hover {
+    transform: translateX(-10px);
+}
+.backpage i {
+    font-size: 3.5rem !important;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+    background-color: #f5f5f5;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.entity {
+    margin: 0px 0px 0 10px;
+    padding: 10px 0 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.entity img {
+    margin: 0 15px 0 0;
+    width: 60px;
+}
+.entity-title {
+    padding: 0;
+}
+.entity-title h5 {
+    margin: 0 0 5px 0;
+}
+.entity-title p {
+    font-size: 0.8rem;
+    color: rgb(90, 90, 90);
+}
+.deletebtn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.editmodal {
+    min-height: 40vh;
+    padding: 30px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-form input[type=submit] {
+    width: 100%;
+}

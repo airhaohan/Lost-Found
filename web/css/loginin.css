@@ -1,0 +1,76 @@
+.left {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 60px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+.left h3 {
+    font-size: 2.6rem;
+    font-weight: 400;
+    padding: 0;
+}
+.my-5 {
+    margin: 40px 0 20px;
+}
+.btn {
+    font-size: 1.3rem;
+    margin: 0 40px;
+}
+.menu-top {
+    position: fixed;
+    width: 33%;
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.menu-top .sidenav-trigger {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.menu-top img {
+    height: 40px;
+}
+.ml-5 {
+    margin: 0 0 0 25px;
+}
+
+
+#slide-out {
+    padding: 3rem 5rem 5rem 5rem;
+}
+#slide-out h6 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 30px 0;
+}
+#slide-out img{
+    max-width: 50%;
+    margin: 0 0 20px 0;
+}
+#privacy {
+    color: rgb(134, 130, 130);
+    position: relative;
+    top: 45px;
+}
+.fixed-action-btn {
+    position: absolute;
+}
+.editmodal {
+    min-height: 40vh;
+    padding: 30px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
